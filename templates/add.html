@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<script src="https://cdn.tailwindcss.com"></script>
+<br><br><br><br>
+<br><br><br><br>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+    form {
+        padding-left: 500px;
+        padding-right: 500px;
+    }
+
+    button {
+        text-decoration: none;
+        color: black;
+    }
+
+    button:hover {
+        background-color: black;
+        color: white;
+    }
+</style>
+<h1 class="display-5 text-center">Add TODO</h1>
+<form action="" method="POST">
+    {% csrf_token %}
+    <label for="formGroupExampleInput">Your TODO</label>
+    {{form.title}} <br>
+    <label for="formGroupExampleInput">Status</label>
+    {{form.Work_Status}} <br>
+
+    <button type="submit" class="btn btn-dark">ADD</button>
+
+</form>
+<br><br>
+<br><br>
+<div class="d-flex justify-content-center">
+    <a class="text-center" href="{% url 'index' %}">
+        <button type="button" class="btn btn-dark">
+            BACK
+        </button>
+    </a>
+</div>
+
+{% endblock %}
